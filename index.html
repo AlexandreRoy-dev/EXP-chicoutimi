@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>René Bouchard | EXP Chicoutimi</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#e56a25',
+                            blue: '#142838',
+                            dark: '#0a0a0a',
+                            light: '#f5f5f5'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="css/site.css">
+</head>
+<body class="antialiased font-sans relative">
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" data-cursor></div>
+    <div class="cursor-outline" data-cursor></div>
+
+    <div id="site-nav"></div>
+
+    <!-- Hero Section -->
+  <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <!-- Vidéo à 100% d'opacité (classe opacity retirée) -->
+        <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+            <source src="bannervid.mov" type="video/mp4">
+        </video>
+        <div class="absolute top-0 left-0 w-full h-full video-overlay z-10"></div>
+        
+        <div class="relative z-20 text-center px-4 max-w-5xl mx-auto gs-reveal">
+            <p class="text-brand-orange uppercase tracking-[0.3em] text-sm mb-6 font-semibold">René Bouchard Immobilier</p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif mb-8 leading-tight">
+                L'excellence <br><span class="text-brand-orange">immobilière</span> au Saguenay
+            </h1>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mt-12">
+                <a href="evaluation-gratuite.html" class="hover-trigger bg-brand-orange text-white px-8 py-4 rounded-full text-sm uppercase tracking-wider font-medium hover:bg-white hover:text-brand-dark transition duration-300">
+                    Évaluation gratuite
+                </a>
+                <a href="https://renebouchard.ca/fr/proprietes" target="_blank" rel="noopener noreferrer" class="hover-trigger border border-white/30 px-8 py-4 rounded-full text-sm uppercase tracking-wider font-medium hover:border-white transition duration-300">
+                    Trouver une propriété
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 flex flex-col items-center animate-bounce opacity-50">
+            <span class="text-xs uppercase tracking-widest mb-2">Défiler</span>
+            <i data-lucide="arrow-down" class="w-4 h-4"></i>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+   <section id="services" class="py-32 px-6 md:px-12 bg-brand-dark relative z-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-20 gs-reveal">
+                <h2 class="text-4xl md:text-5xl font-serif mb-4">Nos Services Exclusifs</h2>
+                <div class="w-20 h-1 bg-brand-orange"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="group flex flex-col bg-[#111] border border-white/10 rounded-2xl overflow-hidden gs-reveal hover:border-brand-orange/50 hover:shadow-[0_10px_40px_rgba(229,106,37,0.1)] transition-all duration-500">
+                    <div class="h-64 w-full overflow-hidden relative">
+                        <img src="achat.jpeg" alt="Achat de Propriété" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#111] to-transparent opacity-90"></div>
+                    </div>
+                    <div class="p-8 pt-0 flex-1 flex flex-col relative z-10">
+                        <h3 class="text-2xl font-serif mb-4 text-white transition-colors duration-300 group-hover:text-brand-orange">Achat de Propriété</h3>
+                        <p class="text-zinc-400 mb-8 font-light leading-relaxed flex-1">Trouvez la maison de vos rêves à Chicoutimi grâce à notre réseau exclusif et notre connaissance pointue du marché local.</p>
+                        <a href="achat.html" class="hover-trigger inline-flex items-center text-sm uppercase tracking-wider text-brand-orange group-hover:text-white transition-colors duration-300 w-max">
+                            En apprendre plus <i data-lucide="arrow-right" class="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="group flex flex-col bg-[#111] border border-white/10 rounded-2xl overflow-hidden gs-reveal hover:border-brand-orange/50 hover:shadow-[0_10px_40px_rgba(229,106,37,0.1)] transition-all duration-500" style="transition-delay: 100ms;">
+                    <div class="h-64 w-full overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=800&auto=format&fit=crop" alt="Vente Stratégique" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#111] to-transparent opacity-90"></div>
+                    </div>
+                    <div class="p-8 pt-0 flex-1 flex flex-col relative z-10">
+                        <h3 class="text-2xl font-serif mb-4 text-white transition-colors duration-300 group-hover:text-brand-orange">Vente Stratégique</h3>
+                        <p class="text-zinc-400 mb-8 font-light leading-relaxed flex-1">Mise en marché haut de gamme, photographie professionnelle et stratégie numérique pour vendre au meilleur prix.</p>
+                        <a href="vendre.html" class="hover-trigger inline-flex items-center text-sm uppercase tracking-wider text-brand-orange group-hover:text-white transition-colors duration-300 w-max">
+                            En apprendre plus <i data-lucide="arrow-right" class="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="group flex flex-col bg-[#111] border border-white/10 rounded-2xl overflow-hidden gs-reveal hover:border-brand-orange/50 hover:shadow-[0_10px_40px_rgba(229,106,37,0.1)] transition-all duration-500" style="transition-delay: 200ms;">
+                    <div class="h-64 w-full overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="Investissement" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#111] to-transparent opacity-90"></div>
+                    </div>
+                    <div class="p-8 pt-0 flex-1 flex flex-col relative z-10">
+                        <h3 class="text-2xl font-serif mb-4 text-white transition-colors duration-300 group-hover:text-brand-orange">Investissement</h3>
+                        <p class="text-zinc-400 mb-8 font-light leading-relaxed flex-1">Analyse de rentabilité et accompagnement pour bâtir un portefeuille immobilier solide au Saguenay-Lac-Saint-Jean.</p>
+                        <a href="achat-investir.html" class="hover-trigger inline-flex items-center text-sm uppercase tracking-wider text-brand-orange group-hover:text-white transition-colors duration-300 w-max">
+                            En apprendre plus <i data-lucide="arrow-right" class="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12 gs-reveal">
+                <a href="https://renebouchard.ca/fr/proprietes" target="_blank" rel="noopener noreferrer" class="hover-trigger inline-flex items-center text-sm uppercase tracking-wider text-zinc-400 hover:text-brand-orange transition">
+                    Voir toutes les propriétés <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 px-6 md:px-12 bg-[#111]">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+            <div class="w-full lg:w-1/2 relative gs-reveal">
+                <!-- Replace with René's actual photo -->
+                <div class="aspect-[4/5] rounded-2xl overflow-hidden relative">
+                    <img src="rene.jpg" alt="René Bouchard" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 border border-white/10 rounded-2xl z-10"></div>
+                </div>
+                <!-- Floating badge -->
+                <div class="absolute -bottom-8 -right-8 bg-brand-dark p-6 border border-white/10 rounded-xl max-w-xs shadow-2xl">
+                    <p class="text-3xl font-serif text-brand-orange mb-1">15+</p>
+                    <p class="text-xs uppercase tracking-wider text-zinc-400">Années d'expérience au Saguenay</p>
+                </div>
+            </div>
+            <div class="w-full lg:w-1/2 gs-reveal">
+                <p class="text-brand-orange uppercase tracking-[0.2em] text-sm mb-4 font-semibold">René Bouchard</p>
+                <h2 class="text-4xl md:text-5xl font-serif mb-8 leading-tight">Au-delà de la transaction,<br>une relation de confiance.</h2>
+                <p class="text-zinc-400 font-light text-lg mb-6 leading-relaxed">
+                    Chez EXP Chicoutimi, nous redéfinissons les standards de l'immobilier. Mon approche est basée sur la transparence, l'innovation marketing et un dévouement absolu envers les objectifs de mes clients.
+                </p>
+                <p class="text-zinc-400 font-light text-lg mb-12 leading-relaxed">
+                    Que vous cherchiez votre premier foyer ou que vous vendiez une propriété de prestige, vous méritez un accompagnement cinq étoiles.
+                </p>
+                <a href="a-propos.html" class="hover-trigger inline-flex items-center gap-4 bg-white text-brand-dark px-8 py-4 rounded-full text-sm uppercase tracking-wider font-semibold hover:bg-brand-orange hover:text-white transition duration-300">
+                    Découvrir mon parcours
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buyer CTA Form (Inspired by MC Equipe) -->
+  <!-- Buyer CTA Form (Inspired by provided image) -->
+    <section class="py-24 px-6 md:px-12 bg-brand-dark relative overflow-hidden text-white">
+        <!-- Abstract background glow -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
+            <div class="absolute -top-[30%] -left-[10%] w-[70%] h-[150%] bg-brand-orange rounded-full blur-[150px] transform rotate-45"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto relative z-10 gs-reveal">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif mb-6 font-bold">À la recherche de la perle rare ?</h2>
+                <p class="text-lg md:text-xl font-light text-zinc-400">Accédez en priorité aux nouveautés sur le marché avant même qu'elles ne soient affichées publiquement.</p>
+            </div>
+
+            <!-- Form Container -->
+            <form class="bg-[#111] border border-white/10 rounded-2xl p-8 md:p-14 shadow-2xl relative overflow-hidden">
+                
+                <!-- 1. TYPE DE PROPRIÉTÉ -->
+                <div class="mb-12">
+                    <div class="border-b border-white/10 pb-4 mb-8">
+                        <span class="text-xs uppercase tracking-[0.2em] text-zinc-400 font-semibold">1. Le type de propriété</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <label class="cursor-pointer group">
+                            <input type="radio" name="property_type" value="maison" class="peer sr-only" checked>
+                            <!-- Card styling interacting with the hidden 'peer' radio button -->
+                            <div class="border border-white/20 rounded-xl p-8 text-center transition-all duration-300 peer-checked:bg-white peer-checked:border-white hover:border-white/50">
+                                <span class="block text-2xl font-serif mb-2 text-white group-[.peer:checked+&]:text-brand-dark transition-colors">Maison</span>
+                                <span class="block text-xs uppercase tracking-widest text-zinc-500 group-[.peer:checked+&]:text-zinc-600 transition-colors">Unifamiliale / Chalet</span>
+                            </div>
+                        </label>
+                        <label class="cursor-pointer group">
+                            <input type="radio" name="property_type" value="condo" class="peer sr-only">
+                            <div class="border border-white/20 rounded-xl p-8 text-center transition-all duration-300 peer-checked:bg-white peer-checked:border-white hover:border-white/50">
+                                <span class="block text-2xl font-serif mb-2 text-white group-[.peer:checked+&]:text-brand-dark transition-colors">Condo</span>
+                                <span class="block text-xs uppercase tracking-widest text-zinc-500 group-[.peer:checked+&]:text-zinc-600 transition-colors">Appartement / Plex</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 2. BUDGET -->
+                <div class="mb-14">
+                    <div class="border-b border-white/10 pb-4 mb-8">
+                        <span class="text-xs uppercase tracking-[0.2em] text-zinc-400 font-semibold">2. L'enveloppe budgétaire</span>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <label class="cursor-pointer group">
+                            <input type="radio" name="budget" value="1" class="peer sr-only">
+                            <div class="border border-white/20 rounded-lg py-5 text-center transition-all duration-300 peer-checked:bg-white peer-checked:border-white hover:border-white/50">
+                                <span class="block text-sm font-medium text-zinc-300 group-[.peer:checked+&]:text-brand-dark transition-colors">&lt; 500K $</span>
+                            </div>
+                        </label>
+                        <label class="cursor-pointer group">
+                            <input type="radio" name="budget" value="2" class="peer sr-only" checked>
+                            <div class="border border-white/20 rounded-lg py-5 text-center transition-all duration-300 peer-checked:bg-white peer-checked:border-white hover:border-white/50">
+                                <span class="block text-sm font-medium text-zinc-300 group-[.peer:checked+&]:text-brand-dark transition-colors">500K - 1M $</span>
+                            </div>
+                        </label>
+                        <label class="cursor-pointer group">
+                            <input type="radio" name="budget" value="3" class="peer sr-only">
+                            <div class="border border-white/20 rounded-lg py-5 text-center transition-all duration-300 peer-checked:bg-white peer-checked:border-white hover:border-white/50">
+                                <span class="block text-sm font-medium text-zinc-300 group-[.peer:checked+&]:text-brand-dark transition-colors">1M - 2.5M $</span>
+                            </div>
+                        </label>
+                        <label class="cursor-pointer group">
+                            <input type="radio" name="budget" value="4" class="peer sr-only">
+                            <div class="border border-white/20 rounded-lg py-5 text-center transition-all duration-300 peer-checked:bg-white peer-checked:border-white hover:border-white/50">
+                                <span class="block text-sm font-medium text-zinc-300 group-[.peer:checked+&]:text-brand-dark transition-colors">2.5M $ +</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 3. COORDONNÉES -->
+                <div class="mb-10">
+                    <div class="border-b border-white/10 pb-4 mb-10">
+                        <span class="text-xs uppercase tracking-[0.2em] text-zinc-400 font-semibold">3. Vos coordonnées</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 mb-10">
+                        <div>
+                            <input type="text" placeholder="Nom complet" class="w-full bg-transparent border-b border-white/20 pb-3 text-white placeholder-zinc-600 focus:outline-none focus:border-brand-orange transition-colors duration-300">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Adresse courriel" class="w-full bg-transparent border-b border-white/20 pb-3 text-white placeholder-zinc-600 focus:outline-none focus:border-brand-orange transition-colors duration-300">
+                        </div>
+                    </div>
+                    <div class="w-full md:w-[calc(50%-1.5rem)]">
+                        <input type="tel" placeholder="Numéro de téléphone" class="w-full bg-transparent border-b border-white/20 pb-3 text-white placeholder-zinc-600 focus:outline-none focus:border-brand-orange transition-colors duration-300">
+                    </div>
+                </div>
+
+                <!-- SUBMIT -->
+                <div class="text-center mt-16">
+                    <button type="button" class="hover-trigger bg-[#e5ead5] text-[#2a2a2a] px-12 py-5 rounded text-xs md:text-sm uppercase tracking-[0.15em] font-semibold hover:bg-brand-orange hover:text-white transition-all duration-400">
+                        Demander une consultation
+                    </button>
+                    <p class="text-[10px] uppercase tracking-widest text-zinc-500 mt-8 opacity-70">Vos informations demeurent strictement confidentielles.</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Bento Box Testimonials -->
+    <section id="testimonials" class="py-32 px-6 md:px-12 bg-brand-dark">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16 gs-reveal">
+                <h2 class="text-4xl md:text-5xl font-serif mb-4">Ce qu'ils disent de nous</h2>
+                <div class="w-20 h-1 bg-brand-orange"></div>
+            </div>
+
+            <!-- Bento Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
+                
+                <!-- Review 1 (Large) -->
+                <div class="bento-card col-span-1 md:col-span-2 row-span-1 md:row-span-2 bg-[#111] border border-white/10 rounded-3xl p-10 flex flex-col justify-between gs-reveal">
+                    <div>
+                        <div class="flex text-brand-orange mb-6">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                        <p class="text-xl md:text-2xl font-serif italic text-zinc-300 leading-relaxed mb-8">"René a vendu notre maison en 4 jours au-dessus du prix demandé. Ses stratégies de mise en marché sont incroyables, notamment la vidéo par drone. Le meilleur courtier au Saguenay, point final."</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-zinc-800 rounded-full flex items-center justify-center text-lg font-serif">M</div>
+                        <div>
+                            <p class="font-semibold text-white">Marie-Pier Tremblay</p>
+                            <p class="text-sm text-zinc-500">Vendeur à Chicoutimi-Nord</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bento-card col-span-1 md:col-span-1 bg-[#111] border border-white/10 rounded-3xl p-8 flex flex-col justify-between gs-reveal">
+                    <div>
+                        <div class="flex text-brand-orange mb-4">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-sm text-zinc-400 mb-6">"Un service clé en main et transparent du début à la fin. Nous étions premiers acheteurs et très rassurés."</p>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-white text-sm">Julien & Sophie</p>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bento-card col-span-1 md:col-span-1 bg-[#111] border border-white/10 rounded-3xl p-8 flex flex-col justify-between gs-reveal">
+                    <div>
+                        <div class="flex text-brand-orange mb-4">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-sm text-zinc-400 mb-6">"Négociateur hors pair. Il a sauvé notre transaction lors de l'inspection."</p>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-white text-sm">Luc Gagnon</p>
+                    </div>
+                </div>
+
+                <!-- CTA Leave Review Block -->
+                <div class="bento-card col-span-1 md:col-span-2 bg-gradient-to-br from-zinc-800 to-[#111] border border-white/10 rounded-3xl p-8 flex flex-col justify-center items-center text-center gs-reveal relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-brand-orange opacity-0 group-hover:opacity-100 transition duration-500 z-0"></div>
+                    <div class="relative z-10 flex flex-col items-center">
+                        <i data-lucide="message-square-quote" class="w-12 h-12 text-white mb-4"></i>
+                        <h3 class="text-2xl font-serif text-white mb-2">Vous avez fait affaire avec nous ?</h3>
+                        <p class="text-zinc-400 group-hover:text-white/80 transition mb-6 text-sm">Votre satisfaction est notre plus grande fierté. Partagez votre expérience avec la communauté.</p>
+                        <a href="#" class="hover-trigger bg-white text-brand-dark px-6 py-3 rounded-full text-xs uppercase tracking-wider font-bold shadow-lg">
+                            Laisser un avis Google
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-32 px-6 md:px-12 bg-[#111]">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 gs-reveal">
+                <h2 class="text-4xl md:text-5xl font-serif mb-4">Questions Fréquentes</h2>
+                <p class="text-zinc-400">Tout ce que vous devez savoir avant de débuter votre projet immobilier.</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="border border-white/10 rounded-2xl overflow-hidden gs-reveal">
+                    <button class="faq-btn w-full px-8 py-6 text-left flex justify-between items-center bg-brand-dark hover:bg-zinc-800 transition">
+                        <span class="font-serif text-lg md:text-xl">Combien coûte vos services pour l'achat ?</span>
+                        <i data-lucide="plus" class="w-5 h-5 text-brand-orange transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-brand-dark/50">
+                        <p class="px-8 pb-6 text-zinc-400 font-light">Nos services de représentation à l'achat sont totalement gratuits pour l'acheteur, la rétribution étant partagée avec le courtier du vendeur selon les standards du marché.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 2 -->
+                <div class="border border-white/10 rounded-2xl overflow-hidden gs-reveal">
+                    <button class="faq-btn w-full px-8 py-6 text-left flex justify-between items-center bg-brand-dark hover:bg-zinc-800 transition">
+                        <span class="font-serif text-lg md:text-xl">Quel est le délai moyen pour vendre une maison à Chicoutimi ?</span>
+                        <i data-lucide="plus" class="w-5 h-5 text-brand-orange transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-brand-dark/50">
+                        <p class="px-8 pb-6 text-zinc-400 font-light">Le délai dépend du prix et de la localisation, mais grâce à notre stratégie marketing agressive avec EXP, nos propriétés se vendent en moyenne 30% plus rapidement que la moyenne régionale.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 3 -->
+                <div class="border border-white/10 rounded-2xl overflow-hidden gs-reveal">
+                    <button class="faq-btn w-full px-8 py-6 text-left flex justify-between items-center bg-brand-dark hover:bg-zinc-800 transition">
+                        <span class="font-serif text-lg md:text-xl">Faites-vous l'évaluation gratuite de ma propriété ?</span>
+                        <i data-lucide="plus" class="w-5 h-5 text-brand-orange transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-brand-dark/50">
+                        <p class="px-8 pb-6 text-zinc-400 font-light">Absolument. <a href="evaluation-gratuite.html" class="text-brand-orange hover:underline">Demandez une évaluation gratuite</a> — analyse comparative de marché (ACM) rigoureuse, sans obligation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+<section id="contact" class="py-32 px-6 md:px-12 bg-brand-dark">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
+            <div class="w-full lg:w-5/12 gs-reveal">
+                <h2 class="text-5xl md:text-6xl font-serif mb-6 leading-tight">Prêt à faire<br>le grand saut?</h2>
+                <p class="text-zinc-400 mb-12 text-lg font-light">Laissez-nous un message. Nous vous répondrons dans les plus brefs délais pour discuter de vos ambitions immobilières.</p>
+                
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-brand-orange">
+                            <i data-lucide="phone" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-zinc-500 uppercase tracking-widest">Téléphone</p>
+                            <!-- Updated Phone Number -->
+                            <a href="tel:+14185808958" class="text-xl font-serif hover:text-brand-orange transition">418-580-8958</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-brand-orange">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-zinc-500 uppercase tracking-widest">Courriel</p>
+                            <!-- Updated Email Address -->
+                            <a href="mailto:rene.bouchard@exprealty.com" class="text-xl font-serif hover:text-brand-orange transition">rene.bouchard@exprealty.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="w-full lg:w-7/12 gs-reveal">
+                <form class="bg-[#111] p-10 rounded-3xl border border-white/10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Prénom & Nom</label>
+                            <input type="text" class="w-full bg-transparent border-b border-white/20 pb-3 text-white focus:outline-none focus:border-brand-orange transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Téléphone</label>
+                            <input type="tel" class="w-full bg-transparent border-b border-white/20 pb-3 text-white focus:outline-none focus:border-brand-orange transition">
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Type de projet</label>
+                        <select class="w-full bg-transparent border-b border-white/20 pb-3 text-white focus:outline-none focus:border-brand-orange transition appearance-none">
+                            <option value="achat" class="bg-brand-dark">Achat</option>
+                            <option value="vente" class="bg-brand-dark">Vente</option>
+                            <option value="evaluation" class="bg-brand-dark">Évaluation gratuite</option>
+                            <option value="autre" class="bg-brand-dark">Autre</option>
+                        </select>
+                    </div>
+                    <div class="mb-12">
+                        <label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Message</label>
+                        <textarea rows="4" class="w-full bg-transparent border-b border-white/20 pb-3 text-white focus:outline-none focus:border-brand-orange transition resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="hover-trigger w-full bg-brand-orange text-white py-4 rounded-xl text-sm uppercase tracking-wider font-semibold hover:bg-white hover:text-brand-dark transition duration-300">
+                        Envoyer la demande
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+
+    <script src="js/nav.js"></script>
+    <script src="js/site.js"></script>
+    <script>
+        renderSiteNav('index.html', { home: true });
+        renderSiteFooter();
+    </script>
+</body>
+</html>

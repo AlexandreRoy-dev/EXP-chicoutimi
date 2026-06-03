@@ -1,0 +1,95 @@
+body {
+    background-color: #0a0a0a;
+    color: #f5f5f5;
+    cursor: none;
+    overflow-x: hidden;
+}
+
+.cursor-dot, .cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+}
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #e56a25;
+}
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(229, 106, 37, 0.5);
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+.video-overlay {
+    background: linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.9) 100%);
+}
+
+.bento-card {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+.bento-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.2);
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #e56a25; }
+
+.page-hero {
+    background: linear-gradient(135deg, #142838 0%, #0a0a0a 60%);
+}
+
+.nav-dropdown:focus-within .nav-dropdown-panel,
+.nav-dropdown:hover .nav-dropdown-panel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.nav-dropdown-panel {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: all 0.2s ease;
+}
+
+.prose-content p {
+    margin-bottom: 1.25rem;
+    color: #a1a1aa;
+    font-weight: 300;
+    line-height: 1.75;
+}
+
+.prose-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #fff;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.prose-content ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    color: #a1a1aa;
+    margin-bottom: 1.25rem;
+}
+.prose-content li { margin-bottom: 0.5rem; }
+
+@media (max-width: 767px) {
+    body { cursor: auto; }
+    .cursor-dot, .cursor-outline { display: none; }
+}
