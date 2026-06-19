@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfert militaire | René Bouchard — EXP Chicoutimi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{colors:{brand:{blue:'#142838',dark:'#142838',light:'#f8fafc'}},fontFamily:{sans:['Inter','sans-serif'],serif:['Playfair Display','serif']}}}}</script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/site.css">
+</head>
+<body class="antialiased font-sans relative">
+<div class="cursor-dot" data-cursor></div>
+<div class="cursor-outline" data-cursor></div>
+<div id="site-nav"></div>
+<div id="page-hero"></div>
+
+<!-- Intro -->
+<section class="py-24 px-6 md:px-12 bg-brand-light">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+        <div class="w-full lg:w-1/2 gs-reveal">
+            <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-slate-200 relative">
+                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1200&auto=format&fit=crop" alt="Famille en relocalisation" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/60 to-transparent"></div>
+                <div class="absolute bottom-6 left-6 right-6">
+                    <p class="text-white/80 text-xs uppercase tracking-widest mb-1">BFC Bagotville · Saguenay</p>
+                    <p class="text-white font-serif text-xl">Un accompagnement adapté aux échéances des FAC</p>
+                </div>
+            </div>
+        </div>
+        <div class="w-full lg:w-1/2 gs-reveal">
+            <p class="text-brand-blue uppercase tracking-[0.2em] text-sm mb-4 font-semibold">Relocalisation des Forces armées canadiennes</p>
+            <h2 class="text-4xl md:text-5xl font-serif mb-6 leading-tight">Votre transfert mérite un courtier qui comprend SIRVA.</h2>
+            <p class="text-zinc-500 font-light text-lg mb-6 leading-relaxed">
+                Un posting implique souvent de vendre une propriété, d'en acheter une autre et de respecter des dates clés — changement d'effectif, entrée en fonction, déménagement — le tout en parallèle du travail au quotidien. René Bouchard accompagne les militaires et leurs familles au Saguenay–Lac-Saint-Jean avec une expertise locale et une connaissance du programme de relocalisation.
+            </p>
+            <p class="text-zinc-500 font-light text-lg mb-8 leading-relaxed">
+                René est <strong class="font-medium text-brand-dark">inscrit auprès de SIRVA</strong>, le fournisseur de services de relocalisation des Forces armées canadiennes (successeur de BGRS). Vous bénéficiez d'un courtier reconnu par le programme, en plus d'un partenaire de confiance sur le terrain à Chicoutimi.
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <a href="https://forces.sirva.ca/login/" target="_blank" rel="noopener noreferrer" class="hover-trigger inline-flex items-center gap-2 bg-brand-blue text-white px-6 py-3 rounded-full text-sm uppercase tracking-wider">
+                    Portail SIRVA <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+                <a href="#contact-militaire" class="hover-trigger inline-flex items-center gap-2 border border-slate-300 px-6 py-3 rounded-full text-sm uppercase tracking-wider hover:border-brand-blue transition">
+                    Parler à René
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SIRVA banner -->
+<section class="py-20 px-6 md:px-12 bg-brand-blue text-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+        <div class="absolute top-1/2 right-0 w-96 h-96 bg-white rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+    </div>
+    <div class="max-w-7xl mx-auto relative z-10 gs-reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <p class="text-sky-200 uppercase tracking-widest text-xs mb-4">Programme SIRVA Forces</p>
+                <h2 class="text-3xl md:text-4xl font-serif mb-6">Connectez-vous à votre dossier de relocalisation</h2>
+                <p class="text-slate-300 font-light leading-relaxed mb-6">
+                    Les membres des FAC et leurs familles gèrent leur relocalisation via le portail SIRVA Forces : évaluation préliminaire, budget, tâches personnalisées, réclamations et coordination avec les fournisseurs de services tiers (TPSP), dont les courtiers immobiliers inscrits.
+                </p>
+                <ul class="space-y-3 text-slate-300 font-light text-sm">
+                    <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-sky-200 shrink-0 mt-0.5"></i>Créez votre compte et complétez votre évaluation préliminaire de relocalisation</li>
+                    <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-sky-200 shrink-0 mt-0.5"></i>Consultez votre budget et vos échéances de mutation</li>
+                    <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-sky-200 shrink-0 mt-0.5"></i>Sélectionnez vos prestataires, y compris votre courtier immobilier</li>
+                </ul>
+            </div>
+            <div class="bg-white/10 border border-white/20 rounded-2xl p-10 backdrop-blur-sm">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center">
+                        <i data-lucide="shield" class="w-7 h-7 text-sky-200"></i>
+                    </div>
+                    <div>
+                        <p class="font-serif text-xl">René Bouchard</p>
+                        <p class="text-sky-200 text-sm">Courtier immobilier inscrit SIRVA · EXP Chicoutimi</p>
+                    </div>
+                </div>
+                <p class="text-slate-300 font-light mb-8 leading-relaxed">
+                    Une fois votre dossier ouvert sur SIRVA, vous pouvez m'engager comme courtier local pour votre achat ou votre vente au Saguenay. Je coordonne mes interventions avec votre conseiller en relocalisation et les délais de votre posting.
+                </p>
+                <a href="https://forces.sirva.ca/login/" target="_blank" rel="noopener noreferrer" class="hover-trigger flex items-center justify-center gap-2 w-full bg-white text-brand-dark py-4 rounded-xl text-sm uppercase tracking-wider font-semibold hover:bg-sky-100 transition">
+                    forces.sirva.ca/login <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services -->
+<section class="py-24 px-6 md:px-12 bg-white">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 gs-reveal">
+            <h2 class="text-4xl md:text-5xl font-serif mb-4">Comment je vous accompagne</h2>
+            <div class="w-20 h-1 bg-brand-blue mb-4"></div>
+            <p class="text-zinc-500 font-light max-w-2xl">Des services immobiliers pensés pour les contraintes d'un transfert militaire — délais, distance et exigences administratives.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bento-card bg-brand-light border border-slate-200 rounded-2xl p-8 gs-reveal">
+                <div class="w-12 h-12 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue mb-6"><i data-lucide="home" class="w-6 h-6"></i></div>
+                <h3 class="text-xl font-serif mb-3">Achat</h3>
+                <p class="text-zinc-500 font-light text-sm leading-relaxed">Repérage de propriétés, visites ciblées selon vos disponibilités, offres d'achat et négociations alignées sur votre budget et vos avantages de relocalisation.</p>
+            </div>
+            <div class="bento-card bg-brand-light border border-slate-200 rounded-2xl p-8 gs-reveal">
+                <div class="w-12 h-12 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue mb-6"><i data-lucide="tag" class="w-6 h-6"></i></div>
+                <h3 class="text-xl font-serif mb-3">Vente</h3>
+                <p class="text-zinc-500 font-light text-sm leading-relaxed">Évaluation, mise en marché et stratégie de prix pour vendre dans les délais imposés par votre changement d'effectif, avec marketing EXP.</p>
+            </div>
+            <div class="bento-card bg-brand-light border border-slate-200 rounded-2xl p-8 gs-reveal">
+                <div class="w-12 h-12 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue mb-6"><i data-lucide="calendar-check" class="w-6 h-6"></i></div>
+                <h3 class="text-xl font-serif mb-3">Coordination</h3>
+                <p class="text-zinc-500 font-light text-sm leading-relaxed">Synchronisation avec SIRVA, votre conseiller en relocalisation, l'inspecteur, le notaire et l'institution financière pour tenir le calendrier.</p>
+            </div>
+            <div class="bento-card bg-brand-light border border-slate-200 rounded-2xl p-8 gs-reveal">
+                <div class="w-12 h-12 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue mb-6"><i data-lucide="map-pin" class="w-6 h-6"></i></div>
+                <h3 class="text-xl font-serif mb-3">Connaissance locale</h3>
+                <p class="text-zinc-500 font-light text-sm leading-relaxed">Quartiers, écoles, services et dynamique du marché à Chicoutimi, Jonquière, La Baie et alentours de la BFC Bagotville.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Arriving / Leaving -->
+<section class="py-24 px-6 md:px-12 bg-brand-light">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16 gs-reveal">
+            <h2 class="text-4xl md:text-5xl font-serif mb-4">Deux situations, un même partenaire</h2>
+            <p class="text-zinc-500 font-light max-w-2xl mx-auto">Que vous arriviez au Saguenay ou que vous quittiez la région pour un nouveau posting, l'approche s'adapte à votre dossier.</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="group bg-white border border-slate-200 rounded-2xl overflow-hidden gs-reveal hover:border-brand-blue/50 transition-all duration-500">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="achat.jpeg" alt="Achat au Saguenay" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/70 to-transparent"></div>
+                    <p class="absolute bottom-4 left-6 text-white font-serif text-2xl">Vous arrivez au Saguenay</p>
+                </div>
+                <div class="p-8">
+                    <ul class="space-y-3 text-zinc-500 font-light text-sm">
+                        <li class="flex items-start gap-3"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-blue shrink-0 mt-0.5"></i>Orientation sur les secteurs près de la BFC Bagotville et les communautés familiales</li>
+                        <li class="flex items-start gap-3"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-blue shrink-0 mt-0.5"></i>Visites planifiées selon vos congés ou votre arrivée — y compris à distance lorsque possible</li>
+                        <li class="flex items-start gap-3"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-blue shrink-0 mt-0.5"></i>Aide à structurer une offre solide dans les délais de votre entrée en fonction</li>
+                        <li class="flex items-start gap-3"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-blue shrink-0 mt-0.5"></i>Conseils sur le financement et les dépenses locales (taxe de mutation, frais de clôture)</li>
+                    </ul>
+                    <a href="achat.html" class="hover-trigger inline-flex items-center gap-2 mt-8 text-sm uppercase tracking-wider text-brand-blue">
+                        Ressources achat <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="group bg-white border border-slate-200 rounded-2xl overflow-hidden gs-reveal hover:border-brand-blue/50 transition-all duration-500">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=800&auto=format&fit=crop" alt="Vente au Saguenay" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/70 to-transparent"></div>
+                    <p class="absolute bottom-4 left-6 text-white font-serif text-2xl">Vous quittez la région</p>
+                </div>
+                <div class="p-8">
+                    <ul class="space-y-3 text-zinc-500 font-light text-sm">
+                        <li class="flex items-start gap-3"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-blue shrink-0 mt-0.5"></i>Évaluation gratuite et stratégie de prix pour vendre avant votre changement d'effectif</li>
+                        <li class="flex items-start gap-3"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-blue shrink-0 mt-0.5"></i>Mise en marché professionnelle (photos, vidéo, réseaux) pour maximiser la visibilité</li>
+                        <li class="flex items-start gap-3"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-blue shrink-0 mt-0.5"></i>Coordination de la vente avec votre calendrier de déménagement porte à porte</li>
+                        <li class="flex items-start gap-3"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-blue shrink-0 mt-0.5"></i>Accompagnement jusqu'à la signature chez le notaire, même si vous êtes déjà partis</li>
+                    </ul>
+                    <a href="vendre.html" class="hover-trigger inline-flex items-center gap-2 mt-8 text-sm uppercase tracking-wider text-brand-blue">
+                        Ressources vente <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Process -->
+<section class="py-24 px-6 md:px-12 bg-white">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16 gs-reveal">
+            <h2 class="text-4xl md:text-5xl font-serif mb-4">Les étapes d'un dossier type</h2>
+            <p class="text-zinc-500 font-light">Chaque transfert est unique, mais voici le fil conducteur que nous suivons ensemble.</p>
+        </div>
+        <div class="space-y-0 gs-reveal">
+            <div class="flex gap-6 pb-10 relative">
+                <div class="flex flex-col items-center">
+                    <div class="w-10 h-10 rounded-full bg-brand-blue text-white flex items-center justify-center font-serif shrink-0">1</div>
+                    <div class="w-px flex-1 bg-slate-200 mt-2"></div>
+                </div>
+                <div class="pt-1 pb-4">
+                    <h3 class="font-serif text-xl mb-2">Réception du message de posting</h3>
+                    <p class="text-zinc-500 font-light text-sm leading-relaxed">Vous confirmez vos dates clés (changement d'effectif, entrée en fonction) et ouvrez ou mettez à jour votre dossier sur le portail SIRVA Forces.</p>
+                </div>
+            </div>
+            <div class="flex gap-6 pb-10 relative">
+                <div class="flex flex-col items-center">
+                    <div class="w-10 h-10 rounded-full bg-brand-blue text-white flex items-center justify-center font-serif shrink-0">2</div>
+                    <div class="w-px flex-1 bg-slate-200 mt-2"></div>
+                </div>
+                <div class="pt-1 pb-4">
+                    <h3 class="font-serif text-xl mb-2">Premier contact avec René</h3>
+                    <p class="text-zinc-500 font-light text-sm leading-relaxed">Nous clarifions votre situation : achat, vente ou les deux, votre échéancier et vos attentes. Je vous guide sur la sélection du courtier inscrit dans SIRVA si ce n'est pas déjà fait.</p>
+                </div>
+            </div>
+            <div class="flex gap-6 pb-10 relative">
+                <div class="flex flex-col items-center">
+                    <div class="w-10 h-10 rounded-full bg-brand-blue text-white flex items-center justify-center font-serif shrink-0">3</div>
+                    <div class="w-px flex-1 bg-slate-200 mt-2"></div>
+                </div>
+                <div class="pt-1 pb-4">
+                    <h3 class="font-serif text-xl mb-2">Mise en action immobilière</h3>
+                    <p class="text-zinc-500 font-light text-sm leading-relaxed">Recherche ou mise en vente, visites, offres, négociations et inspections — en parallèle de vos démarches SIRVA et de votre planification de déménagement.</p>
+                </div>
+            </div>
+            <div class="flex gap-6 pb-10 relative">
+                <div class="flex flex-col items-center">
+                    <div class="w-10 h-10 rounded-full bg-brand-blue text-white flex items-center justify-center font-serif shrink-0">4</div>
+                    <div class="w-px flex-1 bg-slate-200 mt-2"></div>
+                </div>
+                <div class="pt-1 pb-4">
+                    <h3 class="font-serif text-xl mb-2">Clôture et relocalisation</h3>
+                    <p class="text-zinc-500 font-light text-sm leading-relaxed">Finalisation chez le notaire, remise des clés et coordination avec votre date d'entrée en fonction pour un déménagement le plus fluide possible.</p>
+                </div>
+            </div>
+            <div class="flex gap-6">
+                <div class="flex flex-col items-center">
+                    <div class="w-10 h-10 rounded-full bg-brand-blue text-white flex items-center justify-center font-serif shrink-0">5</div>
+                </div>
+                <div class="pt-1">
+                    <h3 class="font-serif text-xl mb-2">Suivi SIRVA</h3>
+                    <p class="text-zinc-500 font-light text-sm leading-relaxed">Documentation et facturation conformes au programme de relocalisation, en collaboration avec votre conseiller SIRVA et les barèmes en vigueur.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About René -->
+<section class="py-24 px-6 md:px-12 bg-brand-light">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+        <div class="w-full lg:w-2/5 gs-reveal">
+            <div class="aspect-[4/5] rounded-2xl overflow-hidden border border-slate-200 relative">
+                <img src="rene.jpg" alt="René Bouchard" class="w-full h-full object-cover">
+            </div>
+        </div>
+        <div class="w-full lg:w-3/5 gs-reveal">
+            <p class="text-brand-blue uppercase tracking-[0.2em] text-sm mb-4 font-semibold">Votre courtier local</p>
+            <h2 class="text-4xl font-serif mb-6 leading-tight">René Bouchard — EXP Chicoutimi</h2>
+            <p class="text-zinc-500 font-light text-lg mb-6 leading-relaxed">
+                Fort de plus de 15 ans d'expérience sur le marché du Saguenay, René combine une connaissance fine du territoire avec un service attentif. Pour les membres des FAC, son inscription SIRVA ajoute la rigueur administrative exigée par le programme de relocalisation.
+            </p>
+            <p class="text-zinc-500 font-light text-lg mb-10 leading-relaxed">
+                Que vous soyez en uniforme, conjoint(e) ou civil(e) rattaché(e) à un posting, vous méritez un interlocuteur disponible, transparent et habitué aux dossiers sous pression temporelle.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
+                <div class="bg-white border border-slate-200 rounded-xl p-6 text-center">
+                    <p class="text-3xl font-serif text-brand-blue mb-1">15+</p>
+                    <p class="text-xs uppercase tracking-wider text-zinc-500">Ans d'expérience</p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-xl p-6 text-center">
+                    <p class="text-3xl font-serif text-brand-blue mb-1">SIRVA</p>
+                    <p class="text-xs uppercase tracking-wider text-zinc-500">Courtier inscrit</p>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-xl p-6 text-center">
+                    <p class="text-3xl font-serif text-brand-blue mb-1">7j/7</p>
+                    <p class="text-xs uppercase tracking-wider text-zinc-500">Disponibilité</p>
+                </div>
+            </div>
+            <a href="a-propos.html" class="hover-trigger inline-flex items-center gap-2 text-sm uppercase tracking-wider text-brand-blue">
+                En savoir plus sur René <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-24 px-6 md:px-12 bg-white">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16 gs-reveal">
+            <h2 class="text-4xl md:text-5xl font-serif mb-4">Questions fréquentes</h2>
+            <p class="text-zinc-500 font-light">Transfert militaire et immobilier au Saguenay.</p>
+        </div>
+        <div class="space-y-4">
+            <div class="border border-slate-200 rounded-2xl overflow-hidden gs-reveal">
+                <button class="faq-btn w-full px-8 py-6 text-left flex justify-between items-center bg-brand-light hover:bg-slate-100 transition">
+                    <span class="font-serif text-lg md:text-xl text-brand-dark pr-4">Qu'est-ce que SIRVA et comment ça fonctionne?</span>
+                    <i data-lucide="plus" class="w-5 h-5 text-brand-blue transition-transform duration-300 shrink-0"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-brand-light/50">
+                    <p class="px-8 pb-6 text-zinc-500 font-light">SIRVA est le fournisseur de services de relocalisation des Forces armées canadiennes. Via le portail <a href="https://forces.sirva.ca/login/" target="_blank" rel="noopener noreferrer" class="text-brand-blue hover:underline">forces.sirva.ca</a>, vous gérez votre dossier, votre budget et vos prestataires. Les courtiers immobiliers doivent être inscrits au programme pour facturer conformément aux barèmes établis.</p>
+                </div>
+            </div>
+            <div class="border border-slate-200 rounded-2xl overflow-hidden gs-reveal">
+                <button class="faq-btn w-full px-8 py-6 text-left flex justify-between items-center bg-brand-light hover:bg-slate-100 transition">
+                    <span class="font-serif text-lg md:text-xl text-brand-dark pr-4">Puis-je vous contacter avant d'ouvrir mon dossier SIRVA?</span>
+                    <i data-lucide="plus" class="w-5 h-5 text-brand-blue transition-transform duration-300 shrink-0"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-brand-light/50">
+                    <p class="px-8 pb-6 text-zinc-500 font-light">Absolument. Un premier échange permet de clarifier votre calendrier et vos besoins immobiliers. Je peux aussi vous orienter sur les étapes à compléter dans SIRVA pour m'engager officiellement comme votre courtier.</p>
+                </div>
+            </div>
+            <div class="border border-slate-200 rounded-2xl overflow-hidden gs-reveal">
+                <button class="faq-btn w-full px-8 py-6 text-left flex justify-between items-center bg-brand-light hover:bg-slate-100 transition">
+                    <span class="font-serif text-lg md:text-xl text-brand-dark pr-4">Je suis affecté à la BFC Bagotville — connaissez-vous le secteur?</span>
+                    <i data-lucide="plus" class="w-5 h-5 text-brand-blue transition-transform duration-300 shrink-0"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-brand-light/50">
+                    <p class="px-8 pb-6 text-zinc-500 font-light">Oui. René connaît le marché de Chicoutimi, Jonquière, La Baie et les environs fréquemment choisis par les familles militaires. Quartiers, temps de trajet, écoles et services font partie de l'analyse lors de votre recherche.</p>
+                </div>
+            </div>
+            <div class="border border-slate-200 rounded-2xl overflow-hidden gs-reveal">
+                <button class="faq-btn w-full px-8 py-6 text-left flex justify-between items-center bg-brand-light hover:bg-slate-100 transition">
+                    <span class="font-serif text-lg md:text-xl text-brand-dark pr-4">Dois-je vendre et acheter en même temps?</span>
+                    <i data-lucide="plus" class="w-5 h-5 text-brand-blue transition-transform duration-300 shrink-0"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-brand-light/50">
+                    <p class="px-8 pb-6 text-zinc-500 font-light">Pas nécessairement. Certains dossiers impliquent seulement un achat ou seulement une vente. D'autres exigent les deux transactions coordonnées autour de votre changement d'effectif. Nous bâtissons un plan adapté à votre posting.</p>
+                </div>
+            </div>
+            <div class="border border-slate-200 rounded-2xl overflow-hidden gs-reveal">
+                <button class="faq-btn w-full px-8 py-6 text-left flex justify-between items-center bg-brand-light hover:bg-slate-100 transition">
+                    <span class="font-serif text-lg md:text-xl text-brand-dark pr-4">Les services d'achat sont-ils payants pour moi?</span>
+                    <i data-lucide="plus" class="w-5 h-5 text-brand-blue transition-transform duration-300 shrink-0"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-brand-light/50">
+                    <p class="px-8 pb-6 text-zinc-500 font-light">En contexte d'achat résidentiel classique, la représentation de l'acheteur est généralement sans frais directs pour l'acheteur. Dans un dossier SIRVA, la facturation suit les barèmes et processus du programme de relocalisation — votre conseiller SIRVA peut confirmer les détails applicables à votre situation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact-militaire" class="py-24 px-6 md:px-12 bg-brand-light">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
+        <div class="w-full lg:w-5/12 gs-reveal">
+            <p class="text-brand-blue uppercase tracking-widest text-sm mb-4">Transfert en cours?</p>
+            <h2 class="text-4xl md:text-5xl font-serif mb-6 leading-tight">Planifions votre prochaine étape.</h2>
+            <p class="text-zinc-500 font-light text-lg mb-10 leading-relaxed">
+                Décrivez votre posting, vos dates et si vous devez acheter, vendre ou les deux. Je vous réponds rapidement pour organiser un premier échange.
+            </p>
+            <div class="space-y-6">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center text-brand-blue"><i data-lucide="phone" class="w-5 h-5"></i></div>
+                    <div>
+                        <p class="text-xs uppercase tracking-widest text-zinc-500">Téléphone</p>
+                        <a href="tel:+14185808958" class="text-xl font-serif hover:text-brand-blue transition">418-580-8958</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center text-brand-blue"><i data-lucide="mail" class="w-5 h-5"></i></div>
+                    <div>
+                        <p class="text-xs uppercase tracking-widest text-zinc-500">Courriel</p>
+                        <a href="mailto:rene.bouchard@exprealty.com" class="text-xl font-serif hover:text-brand-blue transition">rene.bouchard@exprealty.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full lg:w-7/12 gs-reveal">
+            <form class="bg-white p-10 rounded-3xl border border-slate-200">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div><label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Prénom</label><input type="text" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue transition"></div>
+                    <div><label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Nom</label><input type="text" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue transition"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div><label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Courriel</label><input type="email" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue transition"></div>
+                    <div><label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Téléphone</label><input type="tel" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue transition"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Type de dossier</label>
+                        <select class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue transition appearance-none">
+                            <option value="achat">Achat au Saguenay</option>
+                            <option value="vente">Vente au Saguenay</option>
+                            <option value="achat-vente">Achat et vente</option>
+                            <option value="info">Information SIRVA</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Date de mutation (approx.)</label>
+                        <input type="text" placeholder="Ex. juillet 2026" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark placeholder-zinc-400 focus:outline-none focus:border-brand-blue transition">
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Message</label>
+                    <textarea rows="4" placeholder="Base d'origine, base de destination, questions sur SIRVA..." class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark placeholder-zinc-400 focus:outline-none focus:border-brand-blue transition resize-none"></textarea>
+                </div>
+                <button type="submit" class="hover-trigger w-full bg-brand-blue text-white py-4 rounded-xl text-sm uppercase tracking-wider font-semibold hover:bg-white hover:text-brand-dark transition duration-300">
+                    Envoyer ma demande
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="js/nav.js"></script>
+<script src="js/site.js"></script>
+<script>
+renderSiteNav('transfert-militaire.html');
+renderPageHero(
+    'Transfert militaire',
+    'Courtier immobilier inscrit SIRVA — accompagnement achat et vente au Saguenay pour les membres des FAC.',
+    [{label:'Accueil',href:'index.html'},{label:'Transfert militaire'}]
+);
+renderSiteFooter();
+</script>
+</body>
+</html>

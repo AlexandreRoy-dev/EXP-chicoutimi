@@ -14,6 +14,7 @@ function linkAttrs(item) {
 const NAV_ITEMS = [
     { label: 'Accueil', href: 'index.html' },
     { label: 'À propos', href: 'a-propos.html' },
+    { label: 'Transfert militaire', href: 'transfert-militaire.html' },
     { label: 'Propriétés', href: SITE_LINKS.properties, external: true },
     {
         label: 'Acheter',
@@ -23,6 +24,7 @@ const NAV_ITEMS = [
             { label: 'Analyser vos besoins', href: 'achat-analyser-besoins.html' },
             { label: 'Dépenses à prévoir', href: 'achat-depenses.html' },
             { label: 'Envie d\'investir?', href: 'achat-investir.html' },
+            { label: 'Transfert militaire', href: 'transfert-militaire.html' },
         ],
     },
     {
