@@ -58,56 +58,56 @@ function renderSiteNav(activePage, options = {}) {
             const childLinks = item.children
                 .map(
                     (c) =>
-                        `<a href="${c.href}" class="block px-4 py-2 text-sm text-zinc-300 hover:text-brand-orange hover:bg-white/5 transition">${c.label}</a>`
+                        `<a href="${c.href}" class="block px-4 py-2 text-sm text-slate-600 hover:text-brand-blue hover:bg-slate-50 transition">${c.label}</a>`
                 )
                 .join('');
             return `
                 <div class="nav-dropdown relative">
-                    <a href="${item.href}" class="hover-trigger flex items-center gap-1 text-sm uppercase tracking-widest ${isActive ? 'text-brand-orange' : 'text-white hover:text-brand-orange'} transition">
+                    <a href="${item.href}" class="hover-trigger flex items-center gap-1 text-sm uppercase tracking-widest ${isActive ? 'text-brand-blue' : isHome ? 'text-white hover:text-brand-blue' : 'text-brand-dark hover:text-brand-blue'} transition">
                         ${item.label} <i data-lucide="chevron-down" class="w-3 h-3"></i>
                     </a>
-                    <div class="nav-dropdown-panel absolute top-full left-0 mt-2 min-w-[220px] bg-[#111] border border-white/10 rounded-xl py-2 shadow-xl z-50">
+                    <div class="nav-dropdown-panel absolute top-full left-0 mt-2 min-w-[220px] bg-white border border-slate-200 rounded-xl py-2 shadow-xl z-50">
                         ${childLinks}
                     </div>
                 </div>`;
         }
-        return `<a href="${item.href}"${linkAttrs(item)} class="hover-trigger text-sm uppercase tracking-widest ${isActive ? 'text-brand-orange' : 'text-white hover:text-brand-orange'} transition">${item.label}</a>`;
+        return `<a href="${item.href}"${linkAttrs(item)} class="hover-trigger text-sm uppercase tracking-widest ${isActive ? 'text-brand-blue' : isHome ? 'text-white hover:text-brand-blue' : 'text-brand-dark hover:text-brand-blue'} transition">${item.label}</a>`;
     }).join('');
 
     const mobileLinks = NAV_ITEMS.map((item) => {
         const children = item.children
             ? item.children
-                  .map((c) => `<a href="${c.href}" class="block py-2 pl-4 text-sm text-zinc-400 hover:text-brand-orange">${c.label}</a>`)
+                  .map((c) => `<a href="${c.href}" class="block py-2 pl-4 text-sm text-slate-500 hover:text-brand-blue">${c.label}</a>`)
                   .join('')
             : '';
         return `
-            <div class="border-b border-white/10 py-3">
-                <a href="${item.href}"${linkAttrs(item)} class="block text-sm uppercase tracking-widest text-white hover:text-brand-orange">${item.label}</a>
+            <div class="border-b border-slate-200 py-3">
+                <a href="${item.href}"${linkAttrs(item)} class="block text-sm uppercase tracking-widest text-brand-dark hover:text-brand-blue">${item.label}</a>
                 ${children}
             </div>`;
     }).join('');
 
     const topBar = isHome
         ? ''
-        : `<div class="hidden lg:flex items-center gap-2 text-xs text-zinc-400 border-b border-white/10 py-2 px-8 bg-brand-dark/95">
-            <a href="${SITE_LINKS.phoneHref}" class="hover:text-brand-orange transition">${SITE_LINKS.phone}</a>
-            <span class="text-white/20">|</span>
-            <a href="${SITE_LINKS.emailHref}" class="hover:text-brand-orange transition">${SITE_LINKS.email}</a>
+        : `<div class="hidden lg:flex items-center gap-2 text-xs text-slate-500 border-b border-slate-200 py-2 px-8 bg-white/95">
+            <a href="${SITE_LINKS.phoneHref}" class="hover:text-brand-blue transition">${SITE_LINKS.phone}</a>
+            <span class="text-slate-300">|</span>
+            <a href="${SITE_LINKS.emailHref}" class="hover:text-brand-blue transition">${SITE_LINKS.email}</a>
         </div>`;
     const navClass = isHome
         ? 'fixed w-full z-50 top-0 py-6 px-6 md:px-8 flex justify-between items-center mix-blend-difference'
-        : 'sticky top-0 z-50 py-5 px-6 md:px-8 flex justify-between items-center bg-brand-dark/95 backdrop-blur-md border-b border-white/10';
+        : 'sticky top-0 z-50 py-5 px-6 md:px-8 flex justify-between items-center bg-white/95 backdrop-blur-md border-b border-slate-200';
 
     root.innerHTML = `
         ${topBar}
         <nav class="${navClass}">
-            <a href="index.html" class="hover-trigger text-xl md:text-2xl font-serif font-semibold tracking-wider uppercase text-white">EXP Chicoutimi</a>
+            <a href="index.html" class="hover-trigger text-xl md:text-2xl font-serif font-semibold tracking-wider uppercase ${isHome ? 'text-white' : 'text-brand-dark'}">EXP Chicoutimi</a>
             <div class="hidden lg:flex gap-6 items-center">${desktopLinks}</div>
-            <button id="mobile-menu-btn" type="button" class="lg:hidden hover-trigger text-white p-2" aria-label="Menu" aria-expanded="false">
+            <button id="mobile-menu-btn" type="button" class="lg:hidden hover-trigger ${isHome ? 'text-white' : 'text-brand-dark'} p-2" aria-label="Menu" aria-expanded="false">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
         </nav>
-        <div id="mobile-menu-panel" class="hidden lg:hidden bg-brand-dark border-b border-white/10 px-6 pb-4">
+        <div id="mobile-menu-panel" class="hidden lg:hidden bg-white border-b border-slate-200 px-6 pb-4">
             ${mobileLinks}
         </div>`;
 
@@ -118,31 +118,31 @@ function renderSiteFooter() {
     const root = document.getElementById('site-footer');
     if (!root) return;
     root.innerHTML = `
-        <footer class="py-12 px-6 border-t border-white/10 bg-brand-dark">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-sm text-zinc-500 mb-10">
+        <footer class="py-12 px-6 border-t border-slate-200 bg-white">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-sm text-slate-500 mb-10">
                 <div>
-                    <p class="text-white font-serif text-lg mb-3">René Bouchard</p>
+                    <p class="text-brand-dark font-serif text-lg mb-3">René Bouchard</p>
                     <p class="mb-2">Courtier immobilier — EXP Chicoutimi</p>
                     <p>Saguenay–Lac-Saint-Jean, Québec</p>
                 </div>
                 <div>
-                    <p class="text-xs uppercase tracking-widest text-zinc-600 mb-3">Navigation</p>
+                    <p class="text-xs uppercase tracking-widest text-slate-400 mb-3">Navigation</p>
                     <div class="flex flex-col gap-2">
-                        <a href="index.html" class="hover:text-brand-orange transition">Accueil</a>
-                        <a href="${SITE_LINKS.properties}" target="_blank" rel="noopener noreferrer" class="hover:text-brand-orange transition">Propriétés</a>
-                        <a href="evaluation-gratuite.html" class="hover:text-brand-orange transition">Évaluation gratuite</a>
-                        <a href="contact.html" class="hover:text-brand-orange transition">Contact</a>
+                        <a href="index.html" class="hover:text-brand-blue transition">Accueil</a>
+                        <a href="${SITE_LINKS.properties}" target="_blank" rel="noopener noreferrer" class="hover:text-brand-blue transition">Propriétés</a>
+                        <a href="evaluation-gratuite.html" class="hover:text-brand-blue transition">Évaluation gratuite</a>
+                        <a href="contact.html" class="hover:text-brand-blue transition">Contact</a>
                     </div>
                 </div>
                 <div>
-                    <p class="text-xs uppercase tracking-widest text-zinc-600 mb-3">Coordonnées</p>
-                    <a href="${SITE_LINKS.phoneHref}" class="block hover:text-brand-orange transition mb-2">${SITE_LINKS.phone}</a>
-                    <a href="${SITE_LINKS.emailHref}" class="block hover:text-brand-orange transition">${SITE_LINKS.email}</a>
+                    <p class="text-xs uppercase tracking-widest text-slate-400 mb-3">Coordonnées</p>
+                    <a href="${SITE_LINKS.phoneHref}" class="block hover:text-brand-blue transition mb-2">${SITE_LINKS.phone}</a>
+                    <a href="${SITE_LINKS.emailHref}" class="block hover:text-brand-blue transition">${SITE_LINKS.email}</a>
                 </div>
             </div>
-            <p class="text-center text-xs text-zinc-600">
+            <p class="text-center text-xs text-slate-400">
                 &copy; ${new Date().getFullYear()} René Bouchard | EXP Chicoutimi. Tous droits réservés.
-                <a href="politique-confidentialite.html" class="hover:text-brand-orange transition ml-2">Politique de confidentialité</a>
+                <a href="politique-confidentialite.html" class="hover:text-brand-blue transition ml-2">Politique de confidentialité</a>
             </p>
         </footer>`;
 }
@@ -152,18 +152,18 @@ function renderPageHero(title, subtitle, breadcrumb) {
     if (!root) return;
     const crumbs = breadcrumb
         ? breadcrumb.map((c, i) => {
-              const sep = i > 0 ? '<span class="mx-2 text-zinc-600">/</span>' : '';
-              if (c.href) return `${sep}<a href="${c.href}" class="hover:text-brand-orange transition">${c.label}</a>`;
-              return `${sep}<span class="text-brand-orange">${c.label}</span>`;
+              const sep = i > 0 ? '<span class="mx-2 text-slate-400">/</span>' : '';
+              if (c.href) return `${sep}<a href="${c.href}" class="hover:text-white transition">${c.label}</a>`;
+              return `${sep}<span class="text-white/80">${c.label}</span>`;
           }).join('')
         : '';
     root.innerHTML = `
         <section class="page-hero pt-32 pb-20 px-6 md:px-12">
             <div class="max-w-4xl mx-auto gs-reveal">
-                ${crumbs ? `<p class="text-xs uppercase tracking-widest text-zinc-500 mb-6">${crumbs}</p>` : ''}
+                ${crumbs ? `<p class="text-xs uppercase tracking-widest text-slate-300 mb-6">${crumbs}</p>` : ''}
                 <h1 class="text-4xl md:text-6xl font-serif mb-6">${title}</h1>
-                ${subtitle ? `<p class="text-lg text-zinc-400 font-light max-w-2xl">${subtitle}</p>` : ''}
-                <div class="w-20 h-1 bg-brand-orange mt-8"></div>
+                ${subtitle ? `<p class="text-lg text-slate-200 font-light max-w-2xl">${subtitle}</p>` : ''}
+                <div class="w-20 h-1 bg-white/60 mt-8"></div>
             </div>
         </section>`;
 }

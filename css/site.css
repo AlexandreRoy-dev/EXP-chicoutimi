@@ -1,6 +1,6 @@
 body {
-    background-color: #0a0a0a;
-    color: #f5f5f5;
+    background-color: #f8fafc;
+    color: #142838;
     cursor: none;
     overflow-x: hidden;
 }
@@ -17,17 +17,17 @@ body {
 .cursor-dot {
     width: 8px;
     height: 8px;
-    background-color: #e56a25;
+    background-color: #142838;
 }
 .cursor-outline {
     width: 40px;
     height: 40px;
-    border: 1px solid rgba(229, 106, 37, 0.5);
+    border: 1px solid rgba(20, 40, 56, 0.4);
     transition: width 0.2s, height 0.2s, background-color 0.2s;
 }
 
 .video-overlay {
-    background: linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.9) 100%);
+    background: linear-gradient(to bottom, rgba(20, 40, 56, 0.15) 0%, rgba(20, 40, 56, 0.55) 100%);
 }
 
 .bento-card {
@@ -35,21 +35,22 @@ body {
 }
 .bento-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 40px rgba(20, 40, 56, 0.08);
 }
 
 .text-outline {
     color: transparent;
-    -webkit-text-stroke: 1px rgba(255,255,255,0.2);
+    -webkit-text-stroke: 1px rgba(20, 40, 56, 0.15);
 }
 
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #0a0a0a; }
-::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #e56a25; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #142838; }
 
 .page-hero {
-    background: linear-gradient(135deg, #142838 0%, #0a0a0a 60%);
+    background: linear-gradient(135deg, #142838 0%, #1e3a52 100%);
+    color: #ffffff;
 }
 
 .nav-dropdown:focus-within .nav-dropdown-panel,
@@ -68,7 +69,7 @@ body {
 
 .prose-content p {
     margin-bottom: 1.25rem;
-    color: #a1a1aa;
+    color: #475569;
     font-weight: 300;
     line-height: 1.75;
 }
@@ -76,7 +77,7 @@ body {
 .prose-content h3 {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
-    color: #fff;
+    color: #142838;
     margin-top: 2rem;
     margin-bottom: 1rem;
 }
@@ -84,7 +85,7 @@ body {
 .prose-content ul {
     list-style: disc;
     padding-left: 1.5rem;
-    color: #a1a1aa;
+    color: #475569;
     margin-bottom: 1.25rem;
 }
 .prose-content li { margin-bottom: 0.5rem; }

@@ -19,7 +19,7 @@ function initCursor() {
         trigger.addEventListener('mouseenter', () => {
             cursorOutline.style.width = '60px';
             cursorOutline.style.height = '60px';
-            cursorOutline.style.backgroundColor = 'rgba(229, 106, 37, 0.1)';
+            cursorOutline.style.backgroundColor = 'rgba(20, 40, 56, 0.1)';
         });
         trigger.addEventListener('mouseleave', () => {
             cursorOutline.style.width = '40px';

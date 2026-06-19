@@ -3,7 +3,7 @@
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Calculatrice hypothécaire | René Bouchard — EXP Chicoutimi</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config={theme:{extend:{colors:{brand:{orange:'#e56a25',dark:'#0a0a0a'}},fontFamily:{sans:['Inter','sans-serif'],serif:['Playfair Display','serif']}}}}</script>
+<script>tailwind.config={theme:{extend:{colors:{brand:{blue:'#142838',dark:'#142838',light:'#f8fafc'}},fontFamily:{sans:['Inter','sans-serif'],serif:['Playfair Display','serif']}}}}</script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@0,400;0,600&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -12,18 +12,18 @@
 <body class="antialiased font-sans relative">
 <div class="cursor-dot"></div><div class="cursor-outline"></div>
 <div id="site-nav"></div><div id="page-hero"></div>
-<main class="py-16 px-6 md:px-12 bg-brand-dark">
+<main class="py-16 px-6 md:px-12 bg-brand-light">
     <div class="max-w-lg mx-auto gs-reveal">
-        <form id="mortgage-calc" class="bg-[#111] border border-white/10 rounded-2xl p-10 space-y-6">
+        <form id="mortgage-calc" class="bg-white border border-slate-200 rounded-2xl p-10 space-y-6">
             <div><label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Montant emprunté ($)</label>
-            <input id="mc-principal" type="number" value="350000" class="w-full bg-transparent border-b border-white/20 pb-3 text-white focus:outline-none focus:border-brand-orange"></div>
+            <input id="mc-principal" type="number" value="350000" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue"></div>
             <div><label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Taux d'intérêt annuel (%)</label>
-            <input id="mc-rate" type="number" step="0.01" value="5.5" class="w-full bg-transparent border-b border-white/20 pb-3 text-white focus:outline-none focus:border-brand-orange"></div>
+            <input id="mc-rate" type="number" step="0.01" value="5.5" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue"></div>
             <div><label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Amortissement (années)</label>
-            <input id="mc-years" type="number" value="25" class="w-full bg-transparent border-b border-white/20 pb-3 text-white focus:outline-none focus:border-brand-orange"></div>
-            <button type="submit" class="hover-trigger w-full bg-brand-orange text-white py-4 rounded-xl text-sm uppercase tracking-wider">Calculer</button>
+            <input id="mc-years" type="number" value="25" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue"></div>
+            <button type="submit" class="hover-trigger w-full bg-brand-blue text-white py-4 rounded-xl text-sm uppercase tracking-wider">Calculer</button>
             <p class="text-center text-zinc-500 text-sm">Paiement estimé</p>
-            <p id="mc-result" class="text-center text-3xl font-serif text-brand-orange">—</p>
+            <p id="mc-result" class="text-center text-3xl font-serif text-brand-blue">—</p>
             <p class="text-xs text-zinc-600 text-center">Estimation indicative. Taxes et assurance non incluses.</p>
         </form>
     </div>

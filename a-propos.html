@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>À propos | René Bouchard — EXP Chicoutimi</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config={theme:{extend:{colors:{brand:{orange:'#e56a25',blue:'#142838',dark:'#0a0a0a'}},fontFamily:{sans:['Inter','sans-serif'],serif:['Playfair Display','serif']}}}}</script>
+    <script>tailwind.config={theme:{extend:{colors:{brand:{blue:'#142838',dark:'#142838',light:'#f8fafc'}},fontFamily:{sans:['Inter','sans-serif'],serif:['Playfair Display','serif']}}}}</script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -17,15 +17,15 @@
 <div id="site-nav"></div>
 <div id="page-hero"></div>
 
-<main class="py-16 px-6 md:px-12 bg-brand-dark">
+<main class="py-16 px-6 md:px-12 bg-brand-light">
     <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-16">
         <div class="w-full lg:w-2/5 gs-reveal">
-            <div class="aspect-[4/5] rounded-2xl overflow-hidden border border-white/10">
+            <div class="aspect-[4/5] rounded-2xl overflow-hidden border border-slate-200">
                 <img src="rene.jpg" alt="René Bouchard" class="w-full h-full object-cover">
             </div>
         </div>
         <div class="w-full lg:w-3/5 prose-content gs-reveal">
-            <p class="text-brand-orange uppercase tracking-[0.2em] text-sm mb-4 font-semibold">Ici pour vous servir</p>
+            <p class="text-brand-blue uppercase tracking-[0.2em] text-sm mb-4 font-semibold">Ici pour vous servir</p>
             <p>Choisir de travailler avec un courtier immobilier présente de nombreux avantages. Un courtier professionnel possède une connaissance approfondie du marché local au Saguenay–Lac-Saint-Jean et peut vous guider efficacement tout au long du processus d'achat ou de vente.</p>
             <p>Le courtier est capable d'évaluer correctement la valeur d'un bien, en tenant compte des tendances du marché et des comparables récents, assurant ainsi que vous obtiendrez un juste prix, que vous soyez acheteur ou vendeur.</p>
             <h3>Un réseau de professionnels</h3>
@@ -33,16 +33,16 @@
             <h3>Accompagnement personnalisé</h3>
             <p>Travailler avec René Bouchard signifie bénéficier d'un accompagnement attentif. L'objectif est de rendre le processus fluide et efficace, avec des conseils honnêtes basés sur l'expérience et l'expertise du marché chicoutimien.</p>
             <div class="flex flex-wrap gap-4 mt-10 not-prose">
-                <a href="tel:+14185808958" class="hover-trigger inline-flex items-center gap-2 bg-brand-orange text-white px-6 py-3 rounded-full text-sm uppercase tracking-wider">418-580-8958</a>
-                <a href="contact.html" class="hover-trigger border border-white/30 px-6 py-3 rounded-full text-sm uppercase tracking-wider hover:border-brand-orange transition">Contactez-moi</a>
+                <a href="tel:+14185808958" class="hover-trigger inline-flex items-center gap-2 bg-brand-blue text-white px-6 py-3 rounded-full text-sm uppercase tracking-wider">418-580-8958</a>
+                <a href="contact.html" class="hover-trigger border border-slate-300 px-6 py-3 rounded-full text-sm uppercase tracking-wider hover:border-brand-blue transition">Contactez-moi</a>
             </div>
         </div>
     </div>
 </main>
 
-<section class="py-24 px-6 md:px-12 bg-[#111]">
+<section class="py-24 px-6 md:px-12 bg-white">
     <div class="max-w-3xl mx-auto text-center gs-reveal">
-        <p class="text-brand-orange uppercase tracking-widest text-xs mb-4">Témoignages</p>
+        <p class="text-brand-blue uppercase tracking-widest text-xs mb-4">Témoignages</p>
         <h2 class="text-3xl font-serif mb-8">Ce que nos clients disent</h2>
         <p class="text-2xl font-serif italic text-zinc-300 mb-6">« Meilleur courtier immobilier! »</p>
         <p class="text-zinc-500">— Athena Richmond</p>
