@@ -13,8 +13,8 @@ function linkAttrs(item) {
 
 const NAV_ITEMS = [
     { label: 'Accueil', href: 'index.html' },
+    { label: 'Transfert militaire', href: 'transfert-militaire.html', highlight: true },
     { label: 'À propos', href: 'a-propos.html' },
-    { label: 'Transfert militaire', href: 'transfert-militaire.html' },
     { label: 'Propriétés', href: SITE_LINKS.properties, external: true },
     {
         label: 'Acheter',
@@ -49,6 +49,23 @@ const NAV_ITEMS = [
     { label: 'Contact', href: 'contact.html' },
 ];
 
+function navLinkClass(item, isActive, isHome) {
+    if (item.highlight) {
+        if (isHome) {
+            return `hover-trigger inline-flex items-center gap-1.5 text-xs uppercase tracking-widest px-3 py-1.5 rounded-full border border-white/50 bg-white/15 text-white hover:bg-white hover:text-brand-dark transition ${isActive ? '!bg-white !text-brand-dark' : ''}`;
+        }
+        return `hover-trigger inline-flex items-center gap-1.5 text-xs uppercase tracking-widest px-3 py-1.5 rounded-full bg-brand-blue text-white hover:bg-brand-dark transition ${isActive ? 'ring-2 ring-brand-blue/20' : ''}`;
+    }
+    return `hover-trigger text-sm uppercase tracking-widest ${isActive ? 'text-brand-blue' : isHome ? 'text-white hover:text-brand-blue' : 'text-brand-dark hover:text-brand-blue'} transition`;
+}
+
+function mobileLinkClass(item, isActive) {
+    if (item.highlight) {
+        return `block text-sm uppercase tracking-widest text-brand-blue font-semibold bg-brand-blue/5 border border-brand-blue/20 rounded-lg px-3 py-2 hover:bg-brand-blue/10 ${isActive ? 'bg-brand-blue/10' : ''}`;
+    }
+    return `block text-sm uppercase tracking-widest text-brand-dark hover:text-brand-blue ${isActive ? 'text-brand-blue' : ''}`;
+}
+
 function renderSiteNav(activePage, options = {}) {
     const root = document.getElementById('site-nav');
     if (!root) return;
@@ -73,7 +90,7 @@ function renderSiteNav(activePage, options = {}) {
                     </div>
                 </div>`;
         }
-        return `<a href="${item.href}"${linkAttrs(item)} class="hover-trigger text-sm uppercase tracking-widest ${isActive ? 'text-brand-blue' : isHome ? 'text-white hover:text-brand-blue' : 'text-brand-dark hover:text-brand-blue'} transition">${item.label}</a>`;
+        return `<a href="${item.href}"${linkAttrs(item)} class="${navLinkClass(item, isActive, isHome)}">${item.label}</a>`;
     }).join('');
 
     const mobileLinks = NAV_ITEMS.map((item) => {
@@ -84,7 +101,7 @@ function renderSiteNav(activePage, options = {}) {
             : '';
         return `
             <div class="border-b border-slate-200 py-3">
-                <a href="${item.href}"${linkAttrs(item)} class="block text-sm uppercase tracking-widest text-brand-dark hover:text-brand-blue">${item.label}</a>
+                <a href="${item.href}"${linkAttrs(item)} class="${mobileLinkClass(item, activePage === item.href || activePage === item.label)}">${item.label}</a>
                 ${children}
             </div>`;
     }).join('');
