@@ -17,17 +17,20 @@
         <p>Obtenez une analyse comparative de marché (ACM) rigoureuse et 100 % gratuite, sans obligation — comme l'offre « Évaluation gratuite » sur le site de référence.</p>
     </div>
     <div class="max-w-xl mx-auto gs-reveal">
-        <form class="bg-white border border-slate-200 rounded-2xl p-10">
+        <form action="https://formspree.io/f/mnjknwdz" method="POST" class="bg-white border border-slate-200 rounded-2xl p-10">
+            <input type="hidden" name="_subject" value="Évaluation gratuite — EXP Chicoutimi">
+            <input type="hidden" name="form_source" value="Évaluation gratuite">
             <div class="mb-6"><label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Adresse de la propriété</label>
-            <input type="text" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue"></div>
+            <input type="text" name="adresse" required class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue"></div>
             <div class="mb-6"><label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Ville</label>
-            <input type="text" value="Saguenay" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue"></div>
+            <input type="text" name="ville" value="Saguenay" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue"></div>
             <div class="grid grid-cols-2 gap-6 mb-6">
-                <div><label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Nom</label><input type="text" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue"></div>
-                <div><label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Téléphone</label><input type="tel" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue"></div>
+                <div><label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Nom</label><input type="text" name="name" required class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue"></div>
+                <div><label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Téléphone</label><input type="tel" name="phone" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue"></div>
             </div>
-            <div class="mb-8"><label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Courriel</label><input type="email" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue"></div>
-            <button type="submit" class="hover-trigger w-full bg-brand-blue text-white py-4 rounded-xl text-sm uppercase tracking-wider font-semibold hover:bg-white hover:text-brand-dark transition">Demander mon évaluation</button>
+            <div class="mb-6"><label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Courriel</label><input type="email" name="email" required class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue"></div>
+            <p class="text-xs text-zinc-500 mb-6">En soumettant ce formulaire, vous acceptez notre <a href="politique-confidentialite.html" class="text-brand-blue hover:underline">politique de confidentialité</a>.</p>
+            <button type="submit" class="hover-trigger w-full bg-brand-blue text-white py-4 rounded-xl text-sm uppercase tracking-wider font-semibold hover:bg-brand-dark transition">Demander mon évaluation</button>
         </form>
     </div>
 </main>

@@ -4,6 +4,9 @@ const SITE_LINKS = {
     email: 'rene.bouchard@exprealty.com',
     emailHref: 'mailto:rene.bouchard@exprealty.com',
     properties: 'https://renebouchard.ca/fr/proprietes',
+    formspree: 'https://formspree.io/f/mnjknwdz',
+    googleReview: 'https://share.google/ghBwDy4gS2b0xApqd',
+    privacy: 'politique-confidentialite.html',
 };
 
 function linkAttrs(item) {
@@ -77,7 +80,7 @@ function renderSiteNav(activePage, options = {}) {
             const childLinks = item.children
                 .map(
                     (c) =>
-                        `<a href="${c.href}" class="block px-4 py-2 text-sm text-slate-600 hover:text-brand-blue hover:bg-slate-50 transition">${c.label}</a>`
+                        `<a href="${c.href}" class="block px-4 py-2.5 text-sm font-medium text-brand-dark hover:text-brand-blue hover:bg-slate-50 transition">${c.label}</a>`
                 )
                 .join('');
             return `
@@ -85,7 +88,7 @@ function renderSiteNav(activePage, options = {}) {
                     <a href="${item.href}" class="hover-trigger flex items-center gap-1 text-sm uppercase tracking-widest ${isActive ? 'text-brand-blue' : isHome ? 'text-white hover:text-brand-blue' : 'text-brand-dark hover:text-brand-blue'} transition">
                         ${item.label} <i data-lucide="chevron-down" class="w-3 h-3"></i>
                     </a>
-                    <div class="nav-dropdown-panel absolute top-full left-0 mt-2 min-w-[220px] bg-white border border-slate-200 rounded-xl py-2 shadow-xl z-50">
+                    <div class="nav-dropdown-panel absolute top-full left-0 mt-2 min-w-[240px] bg-white border border-slate-200 rounded-xl py-2 shadow-2xl z-[60]">
                         ${childLinks}
                     </div>
                 </div>`;
@@ -114,7 +117,7 @@ function renderSiteNav(activePage, options = {}) {
             <a href="${SITE_LINKS.emailHref}" class="hover:text-brand-blue transition">${SITE_LINKS.email}</a>
         </div>`;
     const navClass = isHome
-        ? 'fixed w-full z-50 top-0 py-6 px-6 md:px-8 flex justify-between items-center mix-blend-difference'
+        ? 'fixed w-full z-50 top-0 py-4 px-6 md:px-8 flex justify-between items-center bg-brand-dark/92 backdrop-blur-md border-b border-white/10 shadow-lg shadow-black/20'
         : 'sticky top-0 z-50 py-5 px-6 md:px-8 flex justify-between items-center bg-white/95 backdrop-blur-md border-b border-slate-200';
 
     root.innerHTML = `
@@ -151,6 +154,7 @@ function renderSiteFooter() {
                         <a href="${SITE_LINKS.properties}" target="_blank" rel="noopener noreferrer" class="hover:text-brand-blue transition">Propriétés</a>
                         <a href="evaluation-gratuite.html" class="hover:text-brand-blue transition">Évaluation gratuite</a>
                         <a href="contact.html" class="hover:text-brand-blue transition">Contact</a>
+                        <a href="${SITE_LINKS.googleReview}" target="_blank" rel="noopener noreferrer" class="hover:text-brand-blue transition">Laisser un avis Google</a>
                     </div>
                 </div>
                 <div>
@@ -161,7 +165,7 @@ function renderSiteFooter() {
             </div>
             <p class="text-center text-xs text-slate-400">
                 &copy; ${new Date().getFullYear()} René Bouchard | EXP Chicoutimi. Tous droits réservés.
-                <a href="politique-confidentialite.html" class="hover:text-brand-blue transition ml-2">Politique de confidentialité</a>
+                <a href="${SITE_LINKS.privacy}" class="hover:text-brand-blue transition ml-2">Politique de confidentialité</a>
             </p>
         </footer>`;
 }

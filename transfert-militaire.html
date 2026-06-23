@@ -356,19 +356,21 @@
             </div>
         </div>
         <div class="w-full lg:w-7/12 gs-reveal">
-            <form class="bg-white p-10 rounded-3xl border border-slate-200">
+            <form action="https://formspree.io/f/mnjknwdz" method="POST" class="bg-white p-10 rounded-3xl border border-slate-200">
+                <input type="hidden" name="_subject" value="Transfert militaire — EXP Chicoutimi">
+                <input type="hidden" name="form_source" value="Transfert militaire">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div><label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Prénom</label><input type="text" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue transition"></div>
-                    <div><label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Nom</label><input type="text" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue transition"></div>
+                    <div><label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Prénom</label><input type="text" name="prenom" required class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue transition"></div>
+                    <div><label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Nom</label><input type="text" name="nom" required class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue transition"></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div><label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Courriel</label><input type="email" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue transition"></div>
-                    <div><label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Téléphone</label><input type="tel" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue transition"></div>
+                    <div><label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Courriel</label><input type="email" name="email" required class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue transition"></div>
+                    <div><label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Téléphone</label><input type="tel" name="phone" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue transition"></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
                         <label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Type de dossier</label>
-                        <select class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue transition appearance-none">
+                        <select name="dossier_type" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue transition appearance-none">
                             <option value="achat">Achat au Saguenay</option>
                             <option value="vente">Vente au Saguenay</option>
                             <option value="achat-vente">Achat et vente</option>
@@ -377,14 +379,15 @@
                     </div>
                     <div>
                         <label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Date de mutation (approx.)</label>
-                        <input type="text" placeholder="Ex. juillet 2026" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark placeholder-zinc-400 focus:outline-none focus:border-brand-blue transition">
+                        <input type="text" name="date_mutation" placeholder="Ex. juillet 2026" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark placeholder-zinc-400 focus:outline-none focus:border-brand-blue transition">
                     </div>
                 </div>
-                <div class="mb-8">
+                <div class="mb-6">
                     <label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Message</label>
-                    <textarea rows="4" placeholder="Base d'origine, base de destination, questions sur SIRVA..." class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark placeholder-zinc-400 focus:outline-none focus:border-brand-blue transition resize-none"></textarea>
+                    <textarea name="message" rows="4" placeholder="Base d'origine, base de destination, questions sur SIRVA..." class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark placeholder-zinc-400 focus:outline-none focus:border-brand-blue transition resize-none"></textarea>
                 </div>
-                <button type="submit" class="hover-trigger w-full bg-brand-blue text-white py-4 rounded-xl text-sm uppercase tracking-wider font-semibold hover:bg-white hover:text-brand-dark transition duration-300">
+                <p class="text-xs text-zinc-500 mb-6">En soumettant ce formulaire, vous acceptez notre <a href="politique-confidentialite.html" class="text-brand-blue hover:underline">politique de confidentialité</a>.</p>
+                <button type="submit" class="hover-trigger w-full bg-brand-blue text-white py-4 rounded-xl text-sm uppercase tracking-wider font-semibold hover:bg-brand-dark transition duration-300">
                     Envoyer ma demande
                 </button>
             </form>

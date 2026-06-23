@@ -90,6 +90,26 @@ body {
 }
 .prose-content li { margin-bottom: 0.5rem; }
 
+/* Form radio / checkbox cards — selected state legibility */
+.form-choice label:has(input:checked) .form-choice-card {
+    background-color: #142838;
+    border-color: #142838;
+}
+.form-choice label:has(input:checked) .form-choice-card .form-choice-title,
+.form-choice label:has(input:checked) .form-choice-card .form-choice-sub {
+    color: #ffffff;
+}
+.form-choice label:has(input:checked) .form-choice-card .form-choice-sub {
+    opacity: 0.85;
+}
+
+/* Home nav over hero video */
+.nav-home {
+    background-color: rgba(20, 40, 56, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
 @media (max-width: 767px) {
     body { cursor: auto; }
     .cursor-dot, .cursor-outline { display: none; }

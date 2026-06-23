@@ -198,60 +198,61 @@
             </div>
 
             <!-- Form Container -->
-            <form class="bg-white border border-slate-200 rounded-2xl p-8 md:p-14 shadow-2xl relative overflow-hidden">
+            <form action="https://formspree.io/f/mnjknwdz" method="POST" class="bg-white border border-slate-200 rounded-2xl p-8 md:p-14 shadow-2xl relative overflow-hidden">
+                <input type="hidden" name="_subject" value="Demande acheteur — EXP Chicoutimi">
+                <input type="hidden" name="form_source" value="Formulaire acheteur (accueil)">
                 
                 <!-- 1. TYPE DE PROPRIÉTÉ -->
-                <div class="mb-12">
+                <div class="mb-12 form-choice">
                     <div class="border-b border-slate-200 pb-4 mb-8">
-                        <span class="text-xs uppercase tracking-[0.2em] text-zinc-400 font-semibold">1. Le type de propriété</span>
+                        <span class="text-xs uppercase tracking-[0.2em] text-zinc-500 font-semibold">1. Le type de propriété</span>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <label class="cursor-pointer group">
-                            <input type="radio" name="property_type" value="maison" class="peer sr-only" checked>
-                            <!-- Card styling interacting with the hidden 'peer' radio button -->
-                            <div class="border border-slate-300 rounded-xl p-8 text-center transition-all duration-300 peer-checked:bg-brand-blue peer-checked:border-brand-blue hover:border-brand-blue/40">
-                                <span class="block text-2xl font-serif mb-2 text-brand-dark group-[.peer:checked+&]:text-white transition-colors">Maison</span>
-                                <span class="block text-xs uppercase tracking-widest text-zinc-500 group-[.peer:checked+&]:text-white/80 transition-colors">Unifamiliale / Chalet</span>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="property_type" value="maison" class="sr-only" checked>
+                            <div class="form-choice-card border border-slate-300 rounded-xl p-8 text-center transition-all duration-300 hover:border-brand-blue/50">
+                                <span class="form-choice-title block text-2xl font-serif mb-2 text-brand-dark">Maison</span>
+                                <span class="form-choice-sub block text-xs uppercase tracking-widest text-zinc-500">Unifamiliale / Chalet</span>
                             </div>
                         </label>
-                        <label class="cursor-pointer group">
-                            <input type="radio" name="property_type" value="condo" class="peer sr-only">
-                            <div class="border border-slate-300 rounded-xl p-8 text-center transition-all duration-300 peer-checked:bg-brand-blue peer-checked:border-brand-blue hover:border-brand-blue/40">
-                                <span class="block text-2xl font-serif mb-2 text-brand-dark group-[.peer:checked+&]:text-white transition-colors">Condo</span>
-                                <span class="block text-xs uppercase tracking-widest text-zinc-500 group-[.peer:checked+&]:text-white/80 transition-colors">Appartement / Plex</span>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="property_type" value="condo" class="sr-only">
+                            <div class="form-choice-card border border-slate-300 rounded-xl p-8 text-center transition-all duration-300 hover:border-brand-blue/50">
+                                <span class="form-choice-title block text-2xl font-serif mb-2 text-brand-dark">Condo</span>
+                                <span class="form-choice-sub block text-xs uppercase tracking-widest text-zinc-500">Appartement / Plex</span>
                             </div>
                         </label>
                     </div>
                 </div>
 
                 <!-- 2. BUDGET -->
-                <div class="mb-14">
+                <div class="mb-14 form-choice">
                     <div class="border-b border-slate-200 pb-4 mb-8">
-                        <span class="text-xs uppercase tracking-[0.2em] text-zinc-400 font-semibold">2. L'enveloppe budgétaire</span>
+                        <span class="text-xs uppercase tracking-[0.2em] text-zinc-500 font-semibold">2. L'enveloppe budgétaire</span>
                     </div>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <label class="cursor-pointer group">
-                            <input type="radio" name="budget" value="1" class="peer sr-only">
-                            <div class="border border-slate-300 rounded-lg py-5 text-center transition-all duration-300 peer-checked:bg-brand-blue peer-checked:border-brand-blue hover:border-brand-blue/40">
-                                <span class="block text-sm font-medium text-slate-600 group-[.peer:checked+&]:text-white transition-colors">&lt; 500K $</span>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="budget" value="moins-500k" class="sr-only">
+                            <div class="form-choice-card border border-slate-300 rounded-lg py-5 text-center transition-all duration-300 hover:border-brand-blue/50">
+                                <span class="form-choice-title block text-sm font-medium text-slate-700">&lt; 500K $</span>
                             </div>
                         </label>
-                        <label class="cursor-pointer group">
-                            <input type="radio" name="budget" value="2" class="peer sr-only" checked>
-                            <div class="border border-slate-300 rounded-lg py-5 text-center transition-all duration-300 peer-checked:bg-brand-blue peer-checked:border-brand-blue hover:border-brand-blue/40">
-                                <span class="block text-sm font-medium text-slate-600 group-[.peer:checked+&]:text-white transition-colors">500K - 1M $</span>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="budget" value="500k-1m" class="sr-only" checked>
+                            <div class="form-choice-card border border-slate-300 rounded-lg py-5 text-center transition-all duration-300 hover:border-brand-blue/50">
+                                <span class="form-choice-title block text-sm font-medium text-slate-700">500K - 1M $</span>
                             </div>
                         </label>
-                        <label class="cursor-pointer group">
-                            <input type="radio" name="budget" value="3" class="peer sr-only">
-                            <div class="border border-slate-300 rounded-lg py-5 text-center transition-all duration-300 peer-checked:bg-brand-blue peer-checked:border-brand-blue hover:border-brand-blue/40">
-                                <span class="block text-sm font-medium text-slate-600 group-[.peer:checked+&]:text-white transition-colors">1M - 2.5M $</span>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="budget" value="1m-2.5m" class="sr-only">
+                            <div class="form-choice-card border border-slate-300 rounded-lg py-5 text-center transition-all duration-300 hover:border-brand-blue/50">
+                                <span class="form-choice-title block text-sm font-medium text-slate-700">1M - 2.5M $</span>
                             </div>
                         </label>
-                        <label class="cursor-pointer group">
-                            <input type="radio" name="budget" value="4" class="peer sr-only">
-                            <div class="border border-slate-300 rounded-lg py-5 text-center transition-all duration-300 peer-checked:bg-brand-blue peer-checked:border-brand-blue hover:border-brand-blue/40">
-                                <span class="block text-sm font-medium text-slate-600 group-[.peer:checked+&]:text-white transition-colors">2.5M $ +</span>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="budget" value="2.5m-plus" class="sr-only">
+                            <div class="form-choice-card border border-slate-300 rounded-lg py-5 text-center transition-all duration-300 hover:border-brand-blue/50">
+                                <span class="form-choice-title block text-sm font-medium text-slate-700">2.5M $ +</span>
                             </div>
                         </label>
                     </div>
@@ -260,27 +261,27 @@
                 <!-- 3. COORDONNÉES -->
                 <div class="mb-10">
                     <div class="border-b border-slate-200 pb-4 mb-10">
-                        <span class="text-xs uppercase tracking-[0.2em] text-zinc-400 font-semibold">3. Vos coordonnées</span>
+                        <span class="text-xs uppercase tracking-[0.2em] text-zinc-500 font-semibold">3. Vos coordonnées</span>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 mb-10">
                         <div>
-                            <input type="text" placeholder="Nom complet" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark placeholder-zinc-600 focus:outline-none focus:border-brand-blue transition-colors duration-300">
+                            <input type="text" name="name" required placeholder="Nom complet" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark placeholder-zinc-400 focus:outline-none focus:border-brand-blue transition-colors duration-300">
                         </div>
                         <div>
-                            <input type="email" placeholder="Adresse courriel" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark placeholder-zinc-600 focus:outline-none focus:border-brand-blue transition-colors duration-300">
+                            <input type="email" name="email" required placeholder="Adresse courriel" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark placeholder-zinc-400 focus:outline-none focus:border-brand-blue transition-colors duration-300">
                         </div>
                     </div>
                     <div class="w-full md:w-[calc(50%-1.5rem)]">
-                        <input type="tel" placeholder="Numéro de téléphone" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark placeholder-zinc-600 focus:outline-none focus:border-brand-blue transition-colors duration-300">
+                        <input type="tel" name="phone" placeholder="Numéro de téléphone" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark placeholder-zinc-400 focus:outline-none focus:border-brand-blue transition-colors duration-300">
                     </div>
                 </div>
 
                 <!-- SUBMIT -->
                 <div class="text-center mt-16">
-                    <button type="button" class="hover-trigger bg-[#e5ead5] text-[#2a2a2a] px-12 py-5 rounded text-xs md:text-sm uppercase tracking-[0.15em] font-semibold hover:bg-brand-blue hover:text-white transition-all duration-400">
+                    <button type="submit" class="hover-trigger bg-brand-blue text-white px-12 py-5 rounded text-xs md:text-sm uppercase tracking-[0.15em] font-semibold hover:bg-brand-dark transition-all duration-300">
                         Demander une consultation
                     </button>
-                    <p class="text-[10px] uppercase tracking-widest text-zinc-500 mt-8 opacity-70">Vos informations demeurent strictement confidentielles.</p>
+                    <p class="text-[10px] uppercase tracking-widest text-zinc-500 mt-8">Vos informations demeurent strictement confidentielles. <a href="politique-confidentialite.html" class="text-brand-blue hover:underline normal-case tracking-normal">Politique de confidentialité</a>.</p>
                 </div>
             </form>
         </div>
@@ -347,7 +348,7 @@
                         <i data-lucide="message-square-quote" class="w-12 h-12 text-brand-blue mb-4 group-hover:text-white"></i>
                         <h3 class="text-2xl font-serif text-brand-dark mb-2 group-hover:text-white">Vous avez fait affaire avec nous ?</h3>
                         <p class="text-zinc-400 group-hover:text-white/80 transition mb-6 text-sm">Votre satisfaction est notre plus grande fierté. Partagez votre expérience avec la communauté.</p>
-                        <a href="#" class="hover-trigger bg-white text-brand-dark px-6 py-3 rounded-full text-xs uppercase tracking-wider font-bold shadow-lg">
+                        <a href="https://share.google/ghBwDy4gS2b0xApqd" target="_blank" rel="noopener noreferrer" class="hover-trigger bg-white text-brand-dark px-6 py-3 rounded-full text-xs uppercase tracking-wider font-bold shadow-lg group-hover:bg-white/90 transition">
                             Laisser un avis Google
                         </a>
                     </div>
@@ -432,31 +433,41 @@
             </div>
             
             <div class="w-full lg:w-7/12 gs-reveal">
-                <form class="bg-white p-10 rounded-3xl border border-slate-200">
+                <form action="https://formspree.io/f/mnjknwdz" method="POST" class="bg-white p-10 rounded-3xl border border-slate-200">
+                    <input type="hidden" name="_subject" value="Contact — EXP Chicoutimi">
+                    <input type="hidden" name="form_source" value="Formulaire contact (accueil)">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                         <div>
                             <label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Prénom & Nom</label>
-                            <input type="text" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue transition">
+                            <input type="text" name="name" required class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue transition">
                         </div>
                         <div>
                             <label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Téléphone</label>
-                            <input type="tel" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue transition">
+                            <input type="tel" name="phone" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue transition">
                         </div>
                     </div>
                     <div class="mb-6">
+                        <label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Courriel</label>
+                        <input type="email" name="email" required class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue transition">
+                    </div>
+                    <div class="mb-6">
                         <label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Type de projet</label>
-                        <select class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue transition appearance-none">
+                        <select name="project_type" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue transition appearance-none">
                             <option value="achat" class="bg-brand-light">Achat</option>
                             <option value="vente" class="bg-brand-light">Vente</option>
                             <option value="evaluation" class="bg-brand-light">Évaluation gratuite</option>
                             <option value="autre" class="bg-brand-light">Autre</option>
                         </select>
                     </div>
-                    <div class="mb-12">
+                    <div class="mb-8">
                         <label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Message</label>
-                        <textarea rows="4" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue transition resize-none"></textarea>
+                        <textarea name="message" rows="4" class="w-full bg-transparent border-b border-slate-300 pb-3 text-brand-dark focus:outline-none focus:border-brand-blue transition resize-none"></textarea>
                     </div>
-                    <button type="submit" class="hover-trigger w-full bg-brand-blue text-white py-4 rounded-xl text-sm uppercase tracking-wider font-semibold hover:bg-white hover:text-brand-dark transition duration-300">
+                    <label class="flex items-start gap-3 text-xs text-zinc-500 mb-6 cursor-pointer">
+                        <input type="checkbox" name="consent" required class="mt-1 accent-brand-blue">
+                        <span>J'accepte d'être contacté par René Bouchard. <a href="politique-confidentialite.html" class="text-brand-blue hover:underline">Politique de confidentialité</a>.</span>
+                    </label>
+                    <button type="submit" class="hover-trigger w-full bg-brand-blue text-white py-4 rounded-xl text-sm uppercase tracking-wider font-semibold hover:bg-brand-dark transition duration-300">
                         Envoyer la demande
                     </button>
                 </form>
